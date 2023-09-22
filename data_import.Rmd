@@ -1,6 +1,8 @@
 ---
 title: "Data Import"
 output: github_document
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r, setup}
@@ -9,3 +11,32 @@ library(tidyverse)
 ```
 
 ## Read in some data
+
+Read in the litters dataset.
+
+```{r} 
+litters_df= read_csv("./data/FAS_litters.csv")
+spec(litters_df)
+litters_df = janitor::clean_names(litters_df)
+```
+
+## Take and look at the data
+
+Print in the console.
+
+```{r}
+litters_df
+```
+
+```{r}
+head(litters_df)
+```
+
+```{r}
+tail(litters_df)
+```
+
+```{r}
+skimr::skim(litters_df)
+```
+
